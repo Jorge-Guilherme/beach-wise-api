@@ -1,0 +1,229 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Source+Code+Pro:wght@400;500&display=swap');
+
+@layer base {
+  :root {
+    /* Praias PE - Theme inspired by tropical beaches */
+    --background: 210 40% 98%;
+    --foreground: 210 50% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 50% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 50% 15%;
+
+    /* Ocean Blue - Primary */
+    --primary: 195 85% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Sand Yellow - Secondary */
+    --secondary: 45 95% 55%;
+    --secondary-foreground: 210 50% 15%;
+
+    /* Light blue - Muted */
+    --muted: 195 50% 95%;
+    --muted-foreground: 195 30% 40%;
+
+    /* Coral Accent */
+    --accent: 195 70% 88%;
+    --accent-foreground: 195 85% 30%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 195 30% 85%;
+    --input: 195 30% 85%;
+    --ring: 195 85% 45%;
+
+    --radius: 0.75rem;
+
+    /* Custom colors */
+    --ocean: 195 85% 45%;
+    --ocean-dark: 200 90% 35%;
+    --ocean-light: 195 80% 90%;
+    --sand: 45 95% 55%;
+    --sand-dark: 40 85% 45%;
+    --sand-light: 48 90% 92%;
+    --sun: 40 100% 50%;
+    --wave: 200 70% 55%;
+    --foam: 0 0% 100%;
+
+    /* Gradients */
+    --gradient-ocean: linear-gradient(135deg, hsl(195 85% 45%), hsl(200 90% 35%));
+    --gradient-sunset: linear-gradient(135deg, hsl(45 95% 55%), hsl(25 90% 55%));
+    --gradient-tropical: linear-gradient(180deg, hsl(195 85% 45%) 0%, hsl(195 80% 60%) 50%, hsl(45 95% 55%) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(195 85% 45%) 0%, hsl(200 90% 40%) 100%);
+
+    /* Sidebar */
+    --sidebar-background: 195 85% 45%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 45 95% 55%;
+    --sidebar-primary-foreground: 210 50% 15%;
+    --sidebar-accent: 195 70% 55%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 195 70% 55%;
+    --sidebar-ring: 45 95% 55%;
+  }
+
+  .dark {
+    --background: 210 50% 8%;
+    --foreground: 210 20% 95%;
+
+    --card: 210 50% 12%;
+    --card-foreground: 210 20% 95%;
+
+    --popover: 210 50% 12%;
+    --popover-foreground: 210 20% 95%;
+
+    --primary: 195 85% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 45 90% 50%;
+    --secondary-foreground: 210 50% 10%;
+
+    --muted: 210 40% 18%;
+    --muted-foreground: 210 20% 70%;
+
+    --accent: 195 60% 25%;
+    --accent-foreground: 195 80% 85%;
+
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 40% 20%;
+    --input: 210 40% 20%;
+    --ring: 195 85% 50%;
+
+    --sidebar-background: 210 50% 10%;
+    --sidebar-foreground: 210 20% 95%;
+    --sidebar-primary: 195 85% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 40% 18%;
+    --sidebar-accent-foreground: 210 20% 95%;
+    --sidebar-border: 210 40% 20%;
+    --sidebar-ring: 195 85% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  code, pre {
+    font-family: 'Source Code Pro', monospace;
+  }
+}
+
+@layer utilities {
+  .text-gradient-ocean {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-ocean);
+  }
+
+  .text-gradient-sunset {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-sunset);
+  }
+
+  .bg-gradient-ocean {
+    background-image: var(--gradient-ocean);
+  }
+
+  .bg-gradient-sunset {
+    background-image: var(--gradient-sunset);
+  }
+
+  .bg-gradient-tropical {
+    background-image: var(--gradient-tropical);
+  }
+
+  .bg-gradient-hero {
+    background-image: var(--gradient-hero);
+  }
+
+  .wave-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ffffff' fill-opacity='0.1' d='M0,192L48,176C96,160,192,128,288,133.3C384,139,480,181,576,186.7C672,192,768,160,864,154.7C960,149,1056,171,1152,186.7C1248,203,1344,213,1392,218.7L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 100% auto;
+  }
+}
+
+/* Custom Animations */
+@keyframes wave {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(2deg);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-wave {
+  animation: wave 3s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Code Block Styling */
+.code-block {
+  @apply bg-foreground/95 text-foam rounded-lg overflow-hidden;
+}
+
+.code-block pre {
+  @apply p-4 overflow-x-auto;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-muted rounded-full;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary/50 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary/70;
+}
