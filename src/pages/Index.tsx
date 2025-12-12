@@ -355,6 +355,9 @@ const Index = () => {
           <p className="text-sm opacity-80">
             Dados abertos sobre as praias de Pernambuco © {new Date().getFullYear()}
           </p>
+          <p className="text-sm opacity-80 mt-2">
+            Código-fonte no GitHub: <a className="underline font-semibold" href="https://github.com/Jorge-Guilherme/beach-wise-api" target="_blank" rel="noreferrer">github.com/Jorge-Guilherme/beach-wise-api</a>
+          </p>
         </div>
       </footer>
     </div>
